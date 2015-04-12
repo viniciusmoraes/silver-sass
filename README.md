@@ -1,5 +1,5 @@
 # SilverSASS
-Library of Mixins the SASS for front-end.
+Library of Mixins the SASS drinking from a json file for front end. 
 
 
 ### Mixin - border radius
