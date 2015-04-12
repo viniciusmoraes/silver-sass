@@ -1,0 +1,17 @@
+@import "variables.json";
+@import "css3/border-radius";
+
+
+$Article-selector-gold: map-get($articleRadius, selectorGold);
+$Article-selector: map-get($articleRadius, selector);
+$Article-radius: map-get($articleRadius, radius);
+$Article-hash: map-get($articleRadius, hash);
+
+$Sidebar-selector-gold: map-get($sidebarRadius, selectorGold);
+$Sidebar-selector: map-get($sidebarRadius, selector);
+$Sidebar-radius: map-get($sidebarRadius, radius);
+$Sidebar-hash: map-get($sidebarRadius, hash);
+
+@include border-radius($Article-hash, $Article-selector-gold, $Article-selector, $Article-radius);
+@include border-radius($Sidebar-hash, $Sidebar-selector-gold, $Sidebar-selector, $Sidebar-radius);
+ 

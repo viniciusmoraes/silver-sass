@@ -1,0 +1,18 @@
+// variables.json
+{
+	"articleRadius": {
+		"selectorGold": "wrapper",
+		"selector": "article",
+		"hash": "id", //Hash: id, class or tag
+		"radius": "20%"
+	},
+
+	"sidebarRadius": {
+		"selectorGold": "wrapper",
+		"selector": "aside",
+		"hash": "class", //Hash: id, class or tag
+		"radius": "30%"
+	}
+
+
+}

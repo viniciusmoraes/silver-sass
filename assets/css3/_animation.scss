@@ -1,0 +1,12 @@
+@mixin animation($name, $duration, $selector, $keyFrames){
+	#{$selector}{
+		animation-duration: $duration;
+		animation-name: $name;
+	}
+
+	@keyframes $name {
+		from
+			
+		to
+	}
+}
