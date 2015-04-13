@@ -36,3 +36,41 @@ $Article-hash: map-get($articleRadius, hash);
   border-radius: 20%; 
 }
 ```
+
+### Mixin - Animation Bounce
+```javascript
+{
+	"messageBounce": {
+		"selectorGold": "wrapper",
+		"selector": "h1",
+		"hash": "id", //Hash: id, class or tag
+		"name": "bounce",
+		"duration": "1.2s" 
+	}
+}
+```
+
+```scss
+$Message-selector-gold: map-get($messageBounce, selectorGold);
+$Message-selector: map-get($messageBounce, selector);
+$Message-hash: map-get($messageBounce, hash);
+$Message-name: map-get($messageBounce, name);
+$Message-duration: map-get($messageBounce, duration);
+```
+
+```scss
+@include animation($Message-hash, $Message-selector-gold, $Message-selector, $Message-name, $Message-duration);
+```
+
+```css
+#wrapper h1 {
+  -webkit-animation: bounce 1.2s ease-out;
+  -moz-animation: bounce 1.2s ease-out;
+  -o-animation: bounce 1.2s ease-out;
+  animation: bounce 1.2s ease-out; 
+}
+
+/* Webkit, Chrome and Safari */
+@-webkit-keyframes bounce {  
+...
+```
