@@ -7,11 +7,12 @@
 		"radius": "20%"
 	},
 
-	"sidebarRadius": {
+	"messageBounce": {
 		"selectorGold": "wrapper",
-		"selector": "aside",
-		"hash": "class", //Hash: id, class or tag
-		"radius": "30%"
+		"selector": "h1",
+		"hash": "id", //Hash: id, class or tag
+		"name": "bounce",
+		"duration": "1.2s" 
 	}
 
 

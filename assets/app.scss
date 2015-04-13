@@ -1,17 +1,22 @@
 @import "variables.json";
 @import "css3/border-radius";
-
-
+@import "css3/animation";
+ 
+//Border Radius
 $Article-selector-gold: map-get($articleRadius, selectorGold);
 $Article-selector: map-get($articleRadius, selector);
 $Article-radius: map-get($articleRadius, radius);
 $Article-hash: map-get($articleRadius, hash);
 
-$Sidebar-selector-gold: map-get($sidebarRadius, selectorGold);
-$Sidebar-selector: map-get($sidebarRadius, selector);
-$Sidebar-radius: map-get($sidebarRadius, radius);
-$Sidebar-hash: map-get($sidebarRadius, hash);
+//Animation Bounce
+$Message-selector-gold: map-get($messageBounce, selectorGold);
+$Message-selector: map-get($messageBounce, selector);
+$Message-hash: map-get($messageBounce, hash);
+$Message-name: map-get($messageBounce, name);
+$Message-duration: map-get($messageBounce, duration);
 
+//Border Radius
 @include border-radius($Article-hash, $Article-selector-gold, $Article-selector, $Article-radius);
-@include border-radius($Sidebar-hash, $Sidebar-selector-gold, $Sidebar-selector, $Sidebar-radius);
+//Animation - Bounce
+@include animation($Message-hash, $Message-selector-gold, $Message-selector, $Message-name, $Message-duration);
  

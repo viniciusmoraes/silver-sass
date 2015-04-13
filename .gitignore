@@ -1,6 +1,8 @@
 *.sass-cache
 *.css
 *.css.map
+normalize.css
 *.sublime-project
 *.sublime-workspace
 index.html
+*.txt

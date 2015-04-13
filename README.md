@@ -1,6 +1,7 @@
 # SilverSASS
 Library of Mixins the SASS drinking from a json file for front end. 
 
+##Important: the latest version of gem 'sass', 'sass-rails' and 'sass-json-vars'.
 
 ### Mixin - border radius
 ```javascript
