@@ -7,13 +7,14 @@
 		"radius": "20%"
 	},
 
-	"messageBounce": {
+	"messageFlash": {
 		"selectorGold": "wrapper",
 		"selector": "h1",
-		"hash": "id", //Hash: id, class or tag
-		"name": "bounce",
-		"duration": "1.2s" 
+		"hash": "class", //Hash: id, class or tag
+		"name": "blinker",
+		"duration": "1.2s",
+		"timing": "linear",
+		"iteration": "infinite"
 	}
-
 
 }
