@@ -1,5 +1,6 @@
 @mixin animation($_hash, $_selectorGold, $_selector, $name, $duration, $timing: "", $iteration: ""){
-	
+		//Criar o mixin para $name, $duration, $timing: "", $iteration: ""
+		
 		@if $_hash == "id"{
 			##{$_selectorGold} #{$_selector}{
 				@if ($timing == "" and $iteration == "") {
