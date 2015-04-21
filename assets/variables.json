@@ -1,14 +1,26 @@
 // variables.json
 {
-	"articleRadius": {
-		"selector": "article",
+	"menuBorderRadius": {
+		"selector": "menu",
+		"hash": "class", //Hash: id, class or tag
+		"radius": "12px"
+	},
+
+	"contentBorderRadius": {
+		"selector": "content",
+		"hash": "class", //Hash: id, class or tag
+		"radius": "12px"
+	},
+
+	"asideBorderRadius": {
+		"selector": "aside",
 		"hash": "tag", //Hash: id, class or tag
-		"radius": "20%"
+		"radius": "12px"
 	},
 
 	"messageFlash": {
-		"selector": "h1",
-		"hash": "tag", //Hash: id, class or tag
+		"selector": "blinker",
+		"hash": "class", //Hash: id, class or tag
 		"name": "blinker",
 		"duration": "1.2s",
 		"timing": "linear",
@@ -16,39 +28,49 @@
 	},
 
 
-	"articleBoxShadow": {
+	"contentShadow": {
 		"selector": "wrapper",
 		"hash": "class",
 		"inset": "no", //no, inset
 		"hLength": "0",
 		"vLength": "0",
-		"blurRadius": "10px",
-		"spread": "10px",
+		"blurRadius": "4px",
+		"spread": "4px",
 		"colorType": "hex",
-		"colorValue": "#00FF00"
+		"colorValue": "#777"
 	},
 
-	"h2TextShadow": {
-		"selector": "h2",
+	"h1TextShadow": {
+		"selector": "h1",
 		"hash": "tag",
 		"hLength": "0",
 		"vLength": "0",
-		"blurRadius": "10px",
+		"blurRadius": "4px",
 		"colorType": "hex",
-		"colorValue": "#00FF00"
+		"colorValue": "#777"
 	},
 
-	"articleFlexBox": {
-		"selector": "flexbox",
-		"hash": "id",
+	"menuFlexBox": {
+		"selector": "menu",
+		"hash": "class",
 		"flexDisplay": "flex", //flex, inline-flex
 		"flexDirection": "row", //row, flex-direction, column, column-reverse
-		"flexWrap": "wrap-reverse", //wrap, nowrap, wrap-reverse
+		"flexWrap": "wrap", //wrap, nowrap, wrap-reverse
 		"justifyContent": "flex-start", //flex-start, flex-end, center, space-between, space-around
 		"alignItems": "center", //flex-start, flex-end, center, baseline, stretch
 		"alignContent": "flex-start" //flex-start, flex-end, space-between, space-around, stretch (Only takes affect when there are multiple lines)
+	},
+
+	"contentBoxSizing": {
+		"selector": "content",
+		"hash": "class", //Hash: id, class or tag
+		"boxSizing": "border-box" //content-box, border-box
+	},
+
+	"asideBoxSizing": {
+		"selector": "content",
+		"hash": "class", //Hash: id, class or tag
+		"boxSizing": "border-box" //content-box, border-box
 	}
-
-
 
 }

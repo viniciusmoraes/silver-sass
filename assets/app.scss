@@ -1,13 +1,9 @@
 @import "variables.json";
 @import "silversass";
 @import "styles";
-
-//gradient, transform, transition, outline, box sizing, box resize, multiple columns, @font face, rgba
-
-//Border Radius
-$Article-selector		: map-get($articleRadius, selector);
-$Article-hash			: map-get($articleRadius, hash);
-$Article-radius			: map-get($articleRadius, radius);
+@import "template";
+  
+//gradient, transform, transition, outline, box resize, multiple columns, @font face, rgba
 
 //Animation Bounce
 $Message-selector		: map-get($messageFlash, selector);
@@ -18,84 +14,143 @@ $Message-timing			: map-get($messageFlash, timing);
 $Message-iteration		: map-get($messageFlash, iteration);
 
 //Box Shadow
-$wrapperShadow-selector		: map-get($articleBoxShadow, selector);
-$wrapperShadow-hash			: map-get($articleBoxShadow, hash);
-$wrapperShadow-inset		: map-get($articleBoxShadow, inset);
-$wrapperShadow-hLength		: map-get($articleBoxShadow, hLength);
-$wrapperShadow-vLength		: map-get($articleBoxShadow, vLength);
-$wrapperShadow-blurRadius	: map-get($articleBoxShadow, blurRadius);
-$wrapperShadow-spread		: map-get($articleBoxShadow, spread);
-$wrapperShadow-colorType	: map-get($articleBoxShadow, colorType);
-$wrapperShadow-colorValue	: map-get($articleBoxShadow, colorValue);
- 	
+$contentShadow-selector		: map-get($contentShadow, selector);
+$contentShadow-hash			: map-get($contentShadow, hash);
+$contentShadow-inset		: map-get($contentShadow, inset);
+$contentShadow-hLength		: map-get($contentShadow, hLength);
+$contentShadow-vLength		: map-get($contentShadow, vLength);
+$contentShadow-blurRadius	: map-get($contentShadow, blurRadius);
+$contentShadow-spread		: map-get($contentShadow, spread);
+$contentShadow-colorType	: map-get($contentShadow, colorType);
+$contentShadow-colorValue	: map-get($contentShadow, colorValue);
+  	
 //Text Shadow
-$h2TextShadow-selector		: map-get($h2TextShadow, selector);
-$h2TextShadow-hash			: map-get($h2TextShadow, hash);
-$h2TextShadow-hLength		: map-get($h2TextShadow, hLength);
-$h2TextShadow-vLength		: map-get($h2TextShadow, vLength);
-$h2TextShadow-blurRadius	: map-get($h2TextShadow, blurRadius);
-$h2TextShadow-colorType		: map-get($h2TextShadow, colorType);
-$h2TextShadow-colorValue	: map-get($h2TextShadow, colorValue);
-
-//Flex Box
-$articleFlex-selector		: map-get($articleFlexBox, selector);
-$articleFlex-hash			: map-get($articleFlexBox, hash);
-$articleFlex-display		: map-get($articleFlexBox, flexDisplay);
-$articleFlex-direction		: map-get($articleFlexBox, flexDirection);
-$articleFlex-wrap			: map-get($articleFlexBox, flexWrap);
-$articleFlex-justifyContent	: map-get($articleFlexBox, justifyContent);
-$articleFlex-alignItems		: map-get($articleFlexBox, alignItems);
-$articleFlex-alignContent	: map-get($articleFlexBox, alignContent);
-
-//Border Radius
-@include border-radius(
-	$Article-selector,
-	$Article-hash, 
-	$Article-radius
-); 	
-
-//Animation - Bounce
-@include animation(
-	$Message-selector, 
-	$Message-hash, 
-	$Message-name, 
-	$Message-duration, 
-	$Message-timing, 
-	$Message-iteration
-);
-
-//Box Shadow 
-@include box-shadow(
-	$wrapperShadow-selector, 
-	$wrapperShadow-hash,
-	$wrapperShadow-inset, 
-	$wrapperShadow-hLength, 
-	$wrapperShadow-vLength,
-	$wrapperShadow-blurRadius,
-	$wrapperShadow-spread,
-	$wrapperShadow-colorType,
-	$wrapperShadow-colorValue	
-);
-
-//Text Shadow 
-@include text-shadow(
-	$h2TextShadow-selector, 
-	$h2TextShadow-hash,
-	$h2TextShadow-hLength,	
-	$h2TextShadow-vLength,
-	$h2TextShadow-blurRadius,
-	$h2TextShadow-colorType,
-	$h2TextShadow-colorValue	
-);
+$h1TextShadow-selector		: map-get($h1TextShadow, selector);
+$h1TextShadow-hash			: map-get($h1TextShadow, hash);
+$h1TextShadow-hLength		: map-get($h1TextShadow, hLength);
+$h1TextShadow-vLength		: map-get($h1TextShadow, vLength);
+$h1TextShadow-blurRadius	: map-get($h1TextShadow, blurRadius);
+$h1TextShadow-colorType		: map-get($h1TextShadow, colorType);
+$h1TextShadow-colorValue	: map-get($h1TextShadow, colorValue);
  
 //Flex Box
-@include flex-box(
-	$articleFlex-selector,
-	$articleFlex-hash,
-	$articleFlex-display,
-	$articleFlex-direction,
-	$articleFlex-wrap,
-	$articleFlex-justifyContent,
-	$articleFlex-alignItems,
-	$articleFlex-alignContent
-);
+$menuFlexBox-selector		: map-get($menuFlexBox, selector);
+$menuFlexBox-hash			: map-get($menuFlexBox, hash);
+$menuFlexBox-display		: map-get($menuFlexBox, flexDisplay);
+$menuFlexBox-direction		: map-get($menuFlexBox, flexDirection);
+$menuFlexBox-wrap			: map-get($menuFlexBox, flexWrap);
+$menuFlexBox-justifyContent	: map-get($menuFlexBox, justifyContent);
+$menuFlexBox-alignItems		: map-get($menuFlexBox, alignItems);
+$menuFlexBox-alignContent	: map-get($menuFlexBox, alignContent);
+
+//Border Radius - Menu
+$menuBorderRadius-selector	: map-get($menuBorderRadius, selector);
+$menuBorderRadius-hash		: map-get($menuBorderRadius, hash);
+$menuBorderRadius-radius	: map-get($menuBorderRadius, radius);
+
+//Border Radius - Content
+$contentBorderRadius-selector	: map-get($contentBorderRadius, selector);
+$contentBorderRadius-hash		: map-get($contentBorderRadius, hash);
+$contentBorderRadius-radius		: map-get($contentBorderRadius, radius);
+
+//Border Radius - Aside
+$asideBorderRadius-selector	: map-get($asideBorderRadius, selector);
+$asideBorderRadius-hash		: map-get($asideBorderRadius, hash);
+$asideBorderRadius-radius	: map-get($asideBorderRadius, radius);
+
+//Box Sizing - Content
+$contentBoxSizing-selector	: map-get($contentBoxSizing, selector);
+$contentBoxSizing-hash		: map-get($contentBoxSizing, hash);
+$contentBoxSizing-boxSizing	: map-get($contentBoxSizing, boxSizing);
+
+//Box Sizing - Aside
+$asideBoxSizing-selector	: map-get($asideBoxSizing, selector);
+$asideBoxSizing-hash		: map-get($asideBoxSizing, hash);
+$asideBoxSizing-boxSizing	: map-get($asideBoxSizing, boxSizing);
+ 
+ 
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+
+	@include box-sizing(
+		$contentBoxSizing-selector,
+		$contentBoxSizing-hash,
+		$contentBoxSizing-boxSizing
+	);
+
+	@include box-sizing(
+		$asideBoxSizing-selector,
+		$asideBoxSizing-hash,
+		$asideBoxSizing-boxSizing
+	);
+	 
+	//Border Radius - Menu
+	@include border-radius(
+		$menuBorderRadius-selector,
+		$menuBorderRadius-hash, 
+		$menuBorderRadius-radius
+	);
+
+	//Border Radius - Content
+	@include border-radius(
+		$contentBorderRadius-selector,
+		$contentBorderRadius-hash, 
+		$contentBorderRadius-radius
+	);
+
+	//Border Radius - Aside
+	@include border-radius(
+		$asideBorderRadius-selector,
+		$asideBorderRadius-hash, 
+		$asideBorderRadius-radius
+	);
+
+	//Animation - Bounce
+	@include animation(
+		$Message-selector, 
+		$Message-hash, 
+		$Message-name, 
+		$Message-duration, 
+		$Message-timing, 
+		$Message-iteration
+	);
+  
+	//Box Shadow - Content Heading
+	@include box-shadow(
+		$contentShadow-selector, 
+		$contentShadow-hash,
+		$contentShadow-inset, 
+		$contentShadow-hLength, 
+		$contentShadow-vLength,
+		$contentShadow-blurRadius,
+		$contentShadow-spread,
+		$contentShadow-colorType,
+		$contentShadow-colorValue	
+	);
+
+	//Text Shadow 
+	@include text-shadow(
+		$h1TextShadow-selector, 
+		$h1TextShadow-hash,
+		$h1TextShadow-hLength,	
+		$h1TextShadow-vLength,
+		$h1TextShadow-blurRadius,
+		$h1TextShadow-colorType,
+		$h1TextShadow-colorValue	
+	);
+	 
+	//Flex Box
+	@include flex-box(
+		$menuFlexBox-selector,
+		$menuFlexBox-hash,
+		$menuFlexBox-display,
+		$menuFlexBox-direction,
+		$menuFlexBox-wrap,
+		$menuFlexBox-justifyContent,
+		$menuFlexBox-alignItems,
+		$menuFlexBox-alignContent
+	);
+}
