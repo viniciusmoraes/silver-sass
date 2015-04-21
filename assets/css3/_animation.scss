@@ -1,7 +1,7 @@
-@mixin animation($_hash, $_selectorGold, $_selector, $name, $duration, $timing: "", $iteration: ""){
+@mixin animation($selector, $hash, $name, $duration, $timing: "", $iteration: ""){
 	
-		@if $_hash == "id"{
-			##{$_selectorGold} #{$_selector}{
+		@if $hash == "id"{
+			##{$selector}{
 				@if ($timing == "" and $iteration == "") {
 				
 					-webkit-animation: #{$name} #{$duration} ease-out;
@@ -280,8 +280,8 @@
 				}
 			}
 		
-		}@elseif $_hash == "class"{
-			.#{$_selectorGold} #{$_selector}{
+		}@elseif $hash == "class"{
+			.#{$selector}{
 				@if ($timing == "" and $iteration == "") {
 				
 					-webkit-animation: #{$name} #{$duration} ease-out;
@@ -560,8 +560,8 @@
 				}
 			}
 			
-		}@elseif $_hash == "tag"{
-			#{$_selectorGold} #{$_selector}{
+		}@elseif $hash == "tag"{
+			#{$selector}{
 				@if ($timing == "" and $iteration == "") {
 				
 					-webkit-animation: #{$name} #{$duration} ease-out;

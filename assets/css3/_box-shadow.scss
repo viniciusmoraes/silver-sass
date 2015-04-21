@@ -1,0 +1,33 @@
+@mixin box-shadow($selector, $hash, $inset, $hLength, $vLength, $blurRadius, $spread, $colorType, $colorValue){
+	@if $hash == "id"{
+		##{$selector} {
+			@if $colorType == "hex" {
+				-webkit-box-shadow: #{$inset} (#{$hLength} + "px") (#{$vLength}) (#{$blurRadius}) (#{$spread}) #{$colorValue};
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+			}@else {
+				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+			}
+		}
+	}@else if $hash == "class"{
+		.#{$selector} {
+			@if $colorType == "hex" {
+				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+			}@else {
+				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+			}
+		}
+	}@else if $hash == "tag"{
+		#{$selector} {
+			@if $colorType == "hex" {
+				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+			}@else {
+				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+			}
+		}
+	}
+}

@@ -1,26 +1,59 @@
 @import "variables.json";
 @import "css3/border-radius";
 @import "css3/animation";
+@import "css3/box-shadow";
 
 
 //Border Radius
-$Article-selector-gold: map-get($articleRadius, selectorGold);
-$Article-selector: map-get($articleRadius, selector);
-$Article-radius: map-get($articleRadius, radius);
-$Article-hash: map-get($articleRadius, hash);
+$Article-selector		: map-get($articleRadius, selector);
+$Article-hash			: map-get($articleRadius, hash);
+$Article-radius			: map-get($articleRadius, radius);
 
 //Animation Bounce
-$Message-selector-gold: map-get($messageFlash, selectorGold);
-$Message-selector: map-get($messageFlash, selector);
-$Message-hash: map-get($messageFlash, hash);
-$Message-name: map-get($messageFlash, name);
-$Message-duration: map-get($messageFlash, duration);
-$Message-timing: map-get($messageFlash, timing);
-$Message-iteration: map-get($messageFlash, iteration);
+$Message-selector		: map-get($messageFlash, selector);
+$Message-hash			: map-get($messageFlash, hash);
+$Message-name			: map-get($messageFlash, name);
+$Message-duration		: map-get($messageFlash, duration);
+$Message-timing			: map-get($messageFlash, timing);
+$Message-iteration		: map-get($messageFlash, iteration);
+
+//Box Shadow
+$wrapperShadow-selector		: map-get($articleBoxShadow, selector);
+$wrapperShadow-hash			: map-get($articleBoxShadow, hash);
+$wrapperShadow-inset		: map-get($articleBoxShadow, inset);
+$wrapperShadow-hLength		: map-get($articleBoxShadow, hLength);
+$wrapperShadow-vLength		: map-get($articleBoxShadow, vLength);
+$wrapperShadow-blurRadius	: map-get($articleBoxShadow, blurRadius);
+$wrapperShadow-spread		: map-get($articleBoxShadow, spread);
+$wrapperShadow-colorType	: map-get($articleBoxShadow, colorType);
+$wrapperShadow-colorValue	: map-get($articleBoxShadow, colorValue);
 
 //Border Radius
-@include border-radius($Article-hash, $Article-selector-gold, $Article-selector, $Article-radius);
-//Animation - Bounce
-@include animation($Message-hash, $Message-selector-gold, $Message-selector, $Message-name, $Message-duration, $Message-timing, $Message-iteration);
+@include border-radius(
+	$Article-selector,
+	$Article-hash, 
+	$Article-radius
+); 	
 
-@warn $Message-timing $Message-iteration;
+//Animation - Bounce
+@include animation(
+	$Message-selector, 
+	$Message-hash, 
+	$Message-name, 
+	$Message-duration, 
+	$Message-timing, 
+	$Message-iteration
+);
+
+//Box Shadow
+@include box-shadow(
+	$wrapperShadow-selector, 
+	$wrapperShadow-hash,
+	$wrapperShadow-inset, 
+	$wrapperShadow-hLength, 
+	$wrapperShadow-vLength,
+	$wrapperShadow-blurRadius,
+	$wrapperShadow-spread,
+	$wrapperShadow-colorType,
+	$wrapperShadow-colorValue	
+);

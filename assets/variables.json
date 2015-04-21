@@ -1,20 +1,31 @@
 // variables.json
 {
 	"articleRadius": {
-		"selectorGold": "wrapper",
 		"selector": "article",
-		"hash": "id", //Hash: id, class or tag
+		"hash": "tag", //Hash: id, class or tag
 		"radius": "20%"
 	},
 
 	"messageFlash": {
-		"selectorGold": "wrapper",
 		"selector": "h1",
-		"hash": "class", //Hash: id, class or tag
+		"hash": "tag", //Hash: id, class or tag
 		"name": "blinker",
 		"duration": "1.2s",
 		"timing": "linear",
 		"iteration": "infinite"
+	},
+
+
+	"articleBoxShadow": {
+		"selector": "wrapper",
+		"hash": "class",
+		"inset": "inset", //no, inset
+		"hLength": "0",
+		"vLength": "0",
+		"blurRadius": "10px",
+		"spread": "10px",
+		"colorType": "hex",
+		"colorValue": "#00FF00"
 	}
 
 }
