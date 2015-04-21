@@ -3,6 +3,11 @@ Library of Mixins the SASS drinking from a json file for front end.
 
 ##Important: the latest version of gem 'sass', 'sass-rails' and 'sass-json-vars'.
 
+##Installation Full the library
+```scss
+@import "silversass";
+```
+
 ### Mixin - border radius
 ```javascript
 {
@@ -161,4 +166,47 @@ $wrapperShadow-colorValue	: map-get($articleBoxShadow, colorValue);
 .wrapper {
   -webkit-box-shadow: inset 0 0 10px 10px #00FF00;
   box-shadow: inset 0 0 10px 10px #00FF00; }
+```
+
+### Mixin - Text Shadow
+```javascript
+{
+	"h2TextShadow": {
+		"selector": "h2",
+		"hash": "tag",
+		"hLength": "0",
+		"vLength": "0",
+		"blurRadius": "10px",
+		"colorType": "hex",
+		"colorValue": "#00FF00"
+	}
+}
+```
+
+```scss
+//Text Shadow
+$h2TextShadow-selector		: map-get($h2TextShadow, selector);
+$h2TextShadow-hash			: map-get($h2TextShadow, hash);
+$h2TextShadow-hLength		: map-get($h2TextShadow, hLength);
+$h2TextShadow-vLength		: map-get($h2TextShadow, vLength);
+$h2TextShadow-blurRadius	: map-get($h2TextShadow, blurRadius);
+$h2TextShadow-colorType		: map-get($h2TextShadow, colorType);
+$h2TextShadow-colorValue	: map-get($h2TextShadow, colorValue);
+```
+
+```scss
+@include text-shadow(
+	$h2TextShadow-selector, 
+	$h2TextShadow-hash,
+	$h2TextShadow-hLength, 
+	$h2TextShadow-vLength,
+	$h2TextShadow-blurRadius,
+	$h2TextShadow-colorType,
+	$h2TextShadow-colorValue	
+);
+```
+
+```css
+h2 {
+  text-shadow: 0 0 10px #00FF00; }
 ```

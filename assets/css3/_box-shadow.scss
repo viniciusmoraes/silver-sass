@@ -2,31 +2,82 @@
 	@if $hash == "id"{
 		##{$selector} {
 			@if $colorType == "hex" {
-				-webkit-box-shadow: #{$inset} (#{$hLength} + "px") (#{$vLength}) (#{$blurRadius}) (#{$spread}) #{$colorValue};
-						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+				@if $inset == "inset" {
+					-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+				}@else if $inset == "no" {
+					-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				}
+
+
 			}@else {
-				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
-						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+				@if $inset == "inset" {
+					@if $inset == "inset" {
+						-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+					}@else if $inset == "no" {
+						-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+						box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					}
+
+				}@else if $inset == "no" {
+					@if $inset == "inset" {
+						-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+					}@else if $inset == "no" {
+						-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+						box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					}
+				}
 			}
 		}
 	}@else if $hash == "class"{
 		.#{$selector} {
 			@if $colorType == "hex" {
-				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
-						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				@if $inset == "inset" {
+					-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+				}@else if $inset == "no" {
+					-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				}
 			}@else {
-				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
-						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+				@if $inset == "inset" {
+					-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+				}@else if $inset == "no" {
+					-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				}
 			}
 		}
 	}@else if $hash == "tag"{
 		#{$selector} {
 			@if $colorType == "hex" {
-				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
-						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				@if $inset == "inset" {
+					-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+				}@else if $inset == "no" {
+					-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				}
 			}@else {
-				-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
-						box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} rgba($colorValue);
+				@if $inset == "inset" {
+					-webkit-box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$inset} #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+
+				}@else if $inset == "no" {
+					-webkit-box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+					box-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$spread} #{$colorValue};
+				}
 			}
 		}
 	}
