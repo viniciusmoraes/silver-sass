@@ -19,11 +19,21 @@
 	"articleBoxShadow": {
 		"selector": "wrapper",
 		"hash": "class",
-		"inset": "inset", //no, inset
+		"inset": "no", //no, inset
 		"hLength": "0",
 		"vLength": "0",
 		"blurRadius": "10px",
 		"spread": "10px",
+		"colorType": "hex",
+		"colorValue": "#00FF00"
+	},
+
+	"h2TextShadow": {
+		"selector": "h2",
+		"hash": "tag",
+		"hLength": "0",
+		"vLength": "0",
+		"blurRadius": "10px",
 		"colorType": "hex",
 		"colorValue": "#00FF00"
 	}

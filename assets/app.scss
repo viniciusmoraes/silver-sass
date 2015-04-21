@@ -1,7 +1,9 @@
 @import "variables.json";
-@import "css3/border-radius";
-@import "css3/animation";
-@import "css3/box-shadow";
+@import "silversass";
+// @import "css3/border-radius";
+// @import "css3/animation";
+// @import "css3/box-shadow";
+// @import "css3/text-shadow";
 
 
 //Border Radius
@@ -27,6 +29,15 @@ $wrapperShadow-blurRadius	: map-get($articleBoxShadow, blurRadius);
 $wrapperShadow-spread		: map-get($articleBoxShadow, spread);
 $wrapperShadow-colorType	: map-get($articleBoxShadow, colorType);
 $wrapperShadow-colorValue	: map-get($articleBoxShadow, colorValue);
+ 	
+//Text Shadow
+$h2TextShadow-selector		: map-get($h2TextShadow, selector);
+$h2TextShadow-hash			: map-get($h2TextShadow, hash);
+$h2TextShadow-hLength		: map-get($h2TextShadow, hLength);
+$h2TextShadow-vLength		: map-get($h2TextShadow, vLength);
+$h2TextShadow-blurRadius	: map-get($h2TextShadow, blurRadius);
+$h2TextShadow-colorType		: map-get($h2TextShadow, colorType);
+$h2TextShadow-colorValue	: map-get($h2TextShadow, colorValue);
 
 //Border Radius
 @include border-radius(
@@ -56,4 +67,15 @@ $wrapperShadow-colorValue	: map-get($articleBoxShadow, colorValue);
 	$wrapperShadow-spread,
 	$wrapperShadow-colorType,
 	$wrapperShadow-colorValue	
+);
+
+//Text Shadow 
+@include text-shadow(
+	$h2TextShadow-selector, 
+	$h2TextShadow-hash,
+	$h2TextShadow-hLength, 
+	$h2TextShadow-vLength,
+	$h2TextShadow-blurRadius,
+	$h2TextShadow-colorType,
+	$h2TextShadow-colorValue	
 );

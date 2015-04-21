@@ -1,0 +1,27 @@
+@mixin text-shadow($selector, $hash, $hLength, $vLength, $blurRadius, $colorType, $colorValue){
+	@if $hash == "id"{
+		##{$selector} {
+			@if $colorType == "hex" {
+				text-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$colorValue};
+			}@else {
+				text-shadow: #{$hLength} #{$vLength} #{$blurRadius} rgba($colorValue);
+			}
+		}
+	}@else if $hash == "class"{
+		.#{$selector} {
+			@if $colorType == "hex" {
+				text-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$colorValue};
+			}@else {
+				text-shadow: #{$hLength} #{$vLength} #{$blurRadius} rgba($colorValue);
+			}
+		}
+	}@else if $hash == "tag"{
+		#{$selector} {
+			@if $colorType == "hex" {
+				text-shadow: #{$hLength} #{$vLength} #{$blurRadius} #{$colorValue};
+			}@else {
+				text-shadow: #{$hLength} #{$vLength} #{$blurRadius} rgba($colorValue);
+			}
+		}
+	}
+}
