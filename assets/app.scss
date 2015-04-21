@@ -45,7 +45,7 @@ $wrapperShadow-colorValue	: map-get($articleBoxShadow, colorValue);
 	$Message-iteration
 );
 
-//Box Shadow
+//Box Shadow 
 @include box-shadow(
 	$wrapperShadow-selector, 
 	$wrapperShadow-hash,
