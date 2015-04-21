@@ -1,0 +1,31 @@
+@mixin flex-box($selector, $hash, $display, $direction, $wrap, $justifyContent, $alignItems, $alignContent){
+	@if $hash == "id"{
+		##{$selector} {
+			display: #{$display};
+			flex-direction: #{$direction};
+			flex-wrap: #{$wrap};
+			justify-content: #{$justifyContent};
+			align-items: #{$alignItems};
+			align-content: #{$alignContent};
+		}
+	}@elseif $hash == "class"{
+		.#{$selector} {
+			display: #{$display};
+			flex-direction: #{$direction};
+			flex-wrap: #{$wrap};
+			justify-content: #{$justifyContent};
+			align-items: #{$alignItems};
+			align-content: #{$alignContent};
+		}
+	}@elseif $hash == "tag"{
+		#{$selector} {
+			display: #{$display};
+			flex-direction: #{$direction};
+			flex-wrap: #{$wrap};
+			justify-content: #{$justifyContent};
+			align-items: #{$alignItems};
+			align-content: #{$alignContent};
+		}
+	}
+
+}

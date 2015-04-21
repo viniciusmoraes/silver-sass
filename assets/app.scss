@@ -1,10 +1,8 @@
 @import "variables.json";
 @import "silversass";
-// @import "css3/border-radius";
-// @import "css3/animation";
-// @import "css3/box-shadow";
-// @import "css3/text-shadow";
+@import "styles";
 
+//gradient, transform, transition, outline, box sizing, box resize, multiple columns, @font face, rgba
 
 //Border Radius
 $Article-selector		: map-get($articleRadius, selector);
@@ -38,6 +36,16 @@ $h2TextShadow-vLength		: map-get($h2TextShadow, vLength);
 $h2TextShadow-blurRadius	: map-get($h2TextShadow, blurRadius);
 $h2TextShadow-colorType		: map-get($h2TextShadow, colorType);
 $h2TextShadow-colorValue	: map-get($h2TextShadow, colorValue);
+
+//Flex Box
+$articleFlex-selector		: map-get($articleFlexBox, selector);
+$articleFlex-hash			: map-get($articleFlexBox, hash);
+$articleFlex-display		: map-get($articleFlexBox, flexDisplay);
+$articleFlex-direction		: map-get($articleFlexBox, flexDirection);
+$articleFlex-wrap			: map-get($articleFlexBox, flexWrap);
+$articleFlex-justifyContent	: map-get($articleFlexBox, justifyContent);
+$articleFlex-alignItems		: map-get($articleFlexBox, alignItems);
+$articleFlex-alignContent	: map-get($articleFlexBox, alignContent);
 
 //Border Radius
 @include border-radius(
@@ -73,9 +81,21 @@ $h2TextShadow-colorValue	: map-get($h2TextShadow, colorValue);
 @include text-shadow(
 	$h2TextShadow-selector, 
 	$h2TextShadow-hash,
-	$h2TextShadow-hLength, 
+	$h2TextShadow-hLength,	
 	$h2TextShadow-vLength,
 	$h2TextShadow-blurRadius,
 	$h2TextShadow-colorType,
 	$h2TextShadow-colorValue	
+);
+ 
+//Flex Box
+@include flex-box(
+	$articleFlex-selector,
+	$articleFlex-hash,
+	$articleFlex-display,
+	$articleFlex-direction,
+	$articleFlex-wrap,
+	$articleFlex-justifyContent,
+	$articleFlex-alignItems,
+	$articleFlex-alignContent
 );

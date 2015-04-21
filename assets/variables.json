@@ -36,6 +36,19 @@
 		"blurRadius": "10px",
 		"colorType": "hex",
 		"colorValue": "#00FF00"
+	},
+
+	"articleFlexBox": {
+		"selector": "flexbox",
+		"hash": "id",
+		"flexDisplay": "flex", //flex, inline-flex
+		"flexDirection": "row", //row, flex-direction, column, column-reverse
+		"flexWrap": "wrap-reverse", //wrap, nowrap, wrap-reverse
+		"justifyContent": "flex-start", //flex-start, flex-end, center, space-between, space-around
+		"alignItems": "center", //flex-start, flex-end, center, baseline, stretch
+		"alignContent": "flex-start" //flex-start, flex-end, space-between, space-around, stretch (Only takes affect when there are multiple lines)
 	}
+
+
 
 }

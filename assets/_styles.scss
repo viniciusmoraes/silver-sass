@@ -1,0 +1,33 @@
+#flexbox div {
+    height: 50px;
+    width: 50px;
+    background: #16193B;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff
+}
+
+#flexbox div:nth-child(2) {
+    background: #35478C;
+    height: 60px;
+    width: 60px
+}
+
+#flexbox div:nth-child(3) {
+    background: #4E7AC7;
+    height: 70px;
+    width: 70px
+}
+
+#flexbox div:nth-child(4) {
+    background: #7FB2F0;
+    height: 80px;
+    width: 80px
+}
+
+#flexbox div:nth-child(5) {
+    background: #ADD5F7;
+    height: 90px;
+    width: 90px
+}
