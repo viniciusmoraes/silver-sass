@@ -16,6 +16,7 @@ Library of Mixins the SASS drinking from a json file for front end.
 3. box-shadow
 4. text-shadow
 5. flex-box
+6. box-sizing
 
 ### Mixin - Example
 ```javascript
