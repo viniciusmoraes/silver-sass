@@ -1,0 +1,24 @@
+@mixin resize($selector, $hash, $resize, $minWidth, $minHeight){
+	@if $hash == "id"{
+		##{$selector} {
+			resize: #{$resize}; //none, horizontal, vertical, both
+			overflow: auto;
+			min-width: #{$minWidth}; /*suggest a min-width & min-height*/
+			min-height: #{$minHeight};
+		}
+	}@elseif $hash == "class"{
+		.#{$selector} {
+			resize: #{$resize}; //none, horizontal, vertical, both
+			overflow: auto;
+			min-width: #{$minWidth}; /*suggest a min-width & min-height*/
+			min-height: #{$minHeight};
+		}
+	}@elseif $hash == "tag"{
+		#{$selector} {
+			resize: #{$resize}; //none, horizontal, vertical, both
+			overflow: auto;
+			min-width: #{$minWidth}; /*suggest a min-width & min-height*/
+			min-height: #{$minHeight};
+		}
+	}
+}

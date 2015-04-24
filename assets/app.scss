@@ -12,7 +12,7 @@ $Message-name			: map-get($messageFlash, name);
 $Message-duration		: map-get($messageFlash, duration);
 $Message-timing			: map-get($messageFlash, timing);
 $Message-iteration		: map-get($messageFlash, iteration);
-
+ 
 //Box Shadow
 $contentShadow-selector		: map-get($contentShadow, selector);
 $contentShadow-hash			: map-get($contentShadow, hash);
@@ -49,9 +49,9 @@ $menuBorderRadius-hash		: map-get($menuBorderRadius, hash);
 $menuBorderRadius-radius	: map-get($menuBorderRadius, radius);
 
 //Border Radius - Content
-$contentBorderRadius-selector	: map-get($contentBorderRadius, selector);
-$contentBorderRadius-hash		: map-get($contentBorderRadius, hash);
-$contentBorderRadius-radius		: map-get($contentBorderRadius, radius);
+$contentBorderRadius-selector : map-get($contentBorderRadius, selector);
+$contentBorderRadius-hash	  : map-get($contentBorderRadius, hash);
+$contentBorderRadius-radius   : map-get($contentBorderRadius, radius);
 
 //Border Radius - Aside
 $asideBorderRadius-selector	: map-get($asideBorderRadius, selector);
@@ -67,8 +67,15 @@ $contentBoxSizing-boxSizing	: map-get($contentBoxSizing, boxSizing);
 $asideBoxSizing-selector	: map-get($asideBoxSizing, selector);
 $asideBoxSizing-hash		: map-get($asideBoxSizing, hash);
 $asideBoxSizing-boxSizing	: map-get($asideBoxSizing, boxSizing);
+
+//Resize - Textarea - Content
+$contentTextareaResize-selector	: map-get($contentTextareaResize, selector);
+$contentTextareaResize-hash		: map-get($contentTextareaResize, hash);
+$contentTextareaResize-resize	: map-get($contentTextareaResize, resize);
+$contentTextareaResize-minWidth	: map-get($contentTextareaResize, minWidth);
+$contentTextareaResize-minHeight: map-get($contentTextareaResize, minHeight);
  
- 
+
 
 #wrapper {
 	width: 960px;
@@ -152,5 +159,14 @@ $asideBoxSizing-boxSizing	: map-get($asideBoxSizing, boxSizing);
 		$menuFlexBox-justifyContent,
 		$menuFlexBox-alignItems,
 		$menuFlexBox-alignContent
+	);
+
+	//Resize - Textarea - Content
+	@include resize(
+		$contentTextareaResize-selector, 
+		$contentTextareaResize-hash, 
+		$contentTextareaResize-resize, 
+		$contentTextareaResize-minWidth, 
+		$contentTextareaResize-minHeight
 	);
 }

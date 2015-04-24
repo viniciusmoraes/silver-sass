@@ -71,6 +71,15 @@
 		"selector": "content",
 		"hash": "class", //Hash: id, class or tag
 		"boxSizing": "border-box" //content-box, border-box
+	},
+
+	"contentTextareaResize": {
+		"selector": "content",
+		"hash": "class", //Hash: id, class or tag
+		"resize": "both", //none, horizontal, vertical, both
+		"minWidth": "100px",
+		"minHeight": "30px"
 	}
+
 
 }
