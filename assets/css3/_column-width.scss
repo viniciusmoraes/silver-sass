@@ -1,0 +1,85 @@
+//$columnGap - space margin
+@mixin column-width($selector, $hash, $columnWidth, $columnGap, $columnCount: ""){
+	@if $hash == "id"{
+
+		@if $columnCount != ""{
+			##{$selector} {
+				position: relative;
+				-moz-column-gap: #{$columnGap};
+				-webkit-column-gap: #{$columnGap};
+								column-gap: #{$columnGap};
+
+				-moz-column-count: #{$columnCount};
+				-webkit-column-count: #{$columnCount};
+								column-count: #{$columnCount};
+
+
+			}	
+		}@else {
+			##{$selector} {
+				position: relative;
+				-moz-column-gap: #{$columnGap};
+				-webkit-column-gap: #{$columnGap};
+								column-gap: #{$columnGap};
+
+				-moz-column-count: #{$columnCount};
+				-webkit-column-count: #{$columnCount};
+								column-count: #{$columnCount};
+
+			}
+		}
+		
+	}@elseif $hash == "class"{
+		@if $columnCount != ""{
+			.#{$selector} {
+				position: relative;
+				-moz-column-gap: #{$columnGap};
+				-webkit-column-gap: #{$columnGap};
+								column-gap: #{$columnGap};
+
+				-moz-column-count: #{$columnCount};
+				-webkit-column-count: #{$columnCount};
+								column-count: #{$columnCount};
+
+			}	
+		}@else {
+			.#{$selector} {
+				position: relative;
+				-moz-column-gap: #{$columnGap};
+				-webkit-column-gap: #{$columnGap};
+								column-gap: #{$columnGap};
+
+				-moz-column-count: #{$columnCount};
+				-webkit-column-count: #{$columnCount};
+								column-count: #{$columnCount};
+
+			}
+		}
+	}@elseif $hash == "tag"{
+		@if $columnCount != ""{
+			#{$selector} {
+				position: relative;
+				-moz-column-gap: #{$columnGap};
+				-webkit-column-gap: #{$columnGap};
+								column-gap: #{$columnGap};
+
+				-moz-column-count: #{$columnCount};
+				-webkit-column-count: #{$columnCount};
+								column-count: #{$columnCount};
+
+			}	
+		}@else {
+			#{$selector} {
+				position: relative;
+				-moz-column-gap: #{$columnGap};
+				-webkit-column-gap: #{$columnGap};
+								column-gap: #{$columnGap};
+
+				-moz-column-count: #{$columnCount};
+				-webkit-column-count: #{$columnCount};
+								column-count: #{$columnCount};
+
+			}
+		}
+	}
+}
