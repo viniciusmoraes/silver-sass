@@ -1,6 +1,8 @@
 // variables.json
 {
+
 	"fontFamily": ["OpenSans", "Arial", "DinBold", "Din"],
+
 	"menuBorderRadius": {
 		"selector": "menu",
 		"hash": "class", //Hash: id, class or tag

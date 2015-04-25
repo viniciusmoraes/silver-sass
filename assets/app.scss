@@ -5,6 +5,18 @@
   
 //gradient, transform, transition, outline, multiple columns, rgba
 
+$path: (
+	css: "/assets/src/css/",
+	js: "/assets/src/js/",
+	font: "/assets/src/font/",
+	img: "/assets/src/img/"
+);
+
+$pathCss 	: map-get($path, css);
+$pathJs 	: map-get($path, js);
+$pathFont 	: map-get($path, font);
+$pathImg 	: map-get($path, img);
+
 //Animation Bounce
 $Message-selector		: map-get($messageFlash, selector);
 $Message-hash			: map-get($messageFlash, hash);
@@ -77,9 +89,9 @@ $contentTextareaResize-minHeight: map-get($contentTextareaResize, minHeight);
 
 //Font Face (Family)
 $collectionsFontFamily: $fontFamily;
+     
+@include font-face($collectionsFontFamily, $pathJs);
  
-@include font-face($collectionsFontFamily);
-
 #wrapper {
 	width: 960px;
 	margin: 0 auto;

@@ -1,0 +1,17 @@
+@mixin font-face($collectionsFontFamily, $pathFont){
+	//Font Face
+	@each $item in $collectionsFontFamily {
+
+		@font-face {
+		  font-family: "" + $item + "";
+		  src: url('#{$pathFont}#{$item}.eot'); /* IE9 Compat Modes */
+		  src: url('#{$pathFont}#{$item}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		       url('#{$pathFont}#{$item}.woff2') format('woff2'), //Super Modern Browsers
+		       url('#{$pathFont}#{$item}.woff') format('woff'), /* Pretty Modern Browsers */
+		       url('#{$pathFont}#{$item}.ttf')  format('truetype'), /* Safari, Android, iOS */
+		       url('#{$pathFont}#{$item}.svg#svg#{item}') format('svg'); /* Legacy iOS */
+		}
+
+	}	
+
+} 
