@@ -3,7 +3,7 @@
 @import "styles";
 @import "template";
   
-//gradient, transform, transition, outline, multiple columns, rgba
+//gradient, transform, transition, outline, rgba
 
 $path: (
 	css: "/assets/src/css/",
@@ -86,6 +86,12 @@ $contentTextareaResize-hash		: map-get($contentTextareaResize, hash);
 $contentTextareaResize-resize	: map-get($contentTextareaResize, resize);
 $contentTextareaResize-minWidth	: map-get($contentTextareaResize, minWidth);
 $contentTextareaResize-minHeight: map-get($contentTextareaResize, minHeight);
+
+//Content Column Width
+$contentColumnWidth-selector	: map-get($contentColumnWidth, selector);
+$contentColumnWidth-hash		: map-get($contentColumnWidth, hash);
+$contentColumnWidth-columnCount	: map-get($contentColumnWidth, columnCount);
+$contentColumnWidth-columnGap	: map-get($contentColumnWidth, columnGap);
 
 //Font Face (Family)
 $collectionsFontFamily: $fontFamily;
@@ -184,4 +190,14 @@ $collectionsFontFamily: $fontFamily;
 		$contentTextareaResize-minWidth, 
 		$contentTextareaResize-minHeight
 	);
+
+	//Column Width
+	@include column-width(
+		$contentColumnWidth-selector,
+		$contentColumnWidth-hash,
+		$contentColumnWidth-columnCount,
+		$contentColumnWidth-columnGap
+	);
+
+
 }

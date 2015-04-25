@@ -9,15 +9,17 @@ Library of Mixins the SASS drinking from a json file for front end.
 ```
 
 ###List of Mixins
-1. border-radius
-2. animation
-    * bounce
-    * blinker
-3. box-shadow
-4. text-shadow
-5. flex-box
-6. box-sizing
+1. Border Radius
+2. Animation
+    * Bounce
+    * Blinker
+3. Box Shadow
+4. Text Shadow
+5. Flex Box
+6. Box Sizing
 7. Resize
+8. Font Face
+9. Column Width
 
 ### Mixin - Example
 ```javascript

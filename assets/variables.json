@@ -82,6 +82,14 @@
 		"resize": "both", //none, horizontal, vertical, both
 		"minWidth": "100px",
 		"minHeight": "30px"
+	},
+
+	"contentColumnWidth": {
+		"selector": "column",
+		"hash": "class", //Hash: id, class or tag
+		//"columnWidth": "200px",
+		"columnGap": "16px",
+		"columnCount": "2"	
 	}
 
 
