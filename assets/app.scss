@@ -3,7 +3,7 @@
 @import "styles";
 @import "template";
   
-//gradient, transform, transition, outline, box resize, multiple columns, @font face, rgba
+//gradient, transform, transition, outline, multiple columns, rgba
 
 //Animation Bounce
 $Message-selector		: map-get($messageFlash, selector);
@@ -74,8 +74,11 @@ $contentTextareaResize-hash		: map-get($contentTextareaResize, hash);
 $contentTextareaResize-resize	: map-get($contentTextareaResize, resize);
 $contentTextareaResize-minWidth	: map-get($contentTextareaResize, minWidth);
 $contentTextareaResize-minHeight: map-get($contentTextareaResize, minHeight);
- 
 
+//Font Face (Family)
+$collectionsFontFamily: $fontFamily;
+ 
+@include font-face($collectionsFontFamily);
 
 #wrapper {
 	width: 960px;
