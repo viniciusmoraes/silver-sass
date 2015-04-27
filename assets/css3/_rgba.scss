@@ -17,6 +17,39 @@
 
 	@if $hash == "id"{
 		##{$selector} {
+			//@warn $selector, $hash, $red, $green, $blue;
+
+			@if $red > $limit or $green > $limit or $blue > $limit {
+				@warn "RGBa Browser Support - You stepped over the line";
+			}@else {
+				 
+				@if $opacity == true {
+
+					@if $property == "background" {
+						background: rgba($red, $green, $blue, $opacityValue);
+					}@elseif $property == "color" {
+						color: rgba($red, $green, $blue, $opacityValue);
+					}
+
+				}@else {
+					@if $property == "background" {
+						background: rgb($red, $green, $blue);
+					}@elseif $property == "color" {
+						color: rgb($red, $green, $blue);
+					}
+					
+				} 
+			}
+
+   			@if $ie == true {
+
+   				@if $property == "background" {
+   					//background:transparent;
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$ieStart},endColorstr=##{$ieEnd}); 
+					zoom: 1;	
+   				}
+				
+   			}
 			
 		} 
 	}@elseif $hash == "class"{
@@ -59,6 +92,40 @@
 		}
 	}@else if $hash == "tag"{
 		#{$selector} {
+
+			//@warn $selector, $hash, $red, $green, $blue;
+
+			@if $red > $limit or $green > $limit or $blue > $limit {
+				@warn "RGBa Browser Support - You stepped over the line";
+			}@else {
+				 
+				@if $opacity == true {
+
+					@if $property == "background" {
+						background: rgba($red, $green, $blue, $opacityValue);
+					}@elseif $property == "color" {
+						color: rgba($red, $green, $blue, $opacityValue);
+					}
+
+				}@else {
+					@if $property == "background" {
+						background: rgb($red, $green, $blue);
+					}@elseif $property == "color" {
+						color: rgb($red, $green, $blue);
+					}
+					
+				} 
+			}
+
+   			@if $ie == true {
+
+   				@if $property == "background" {
+   					//background:transparent;
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$ieStart},endColorstr=##{$ieEnd}); 
+					zoom: 1;	
+   				}
+				
+   			}
 			
 		}
 	}
