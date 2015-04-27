@@ -98,10 +98,10 @@ $collectionsFontFamily: $fontFamily;
      
 @include font-face($collectionsFontFamily, $pathJs);
  
-#wrapper {
-	width: 960px;
-	margin: 0 auto;
+	#wrapper {
+	width: 100%;
 	overflow: hidden;
+} 
 
 	@include box-sizing(
 		$contentBoxSizing-selector,
@@ -181,7 +181,7 @@ $collectionsFontFamily: $fontFamily;
 		$menuFlexBox-alignItems,
 		$menuFlexBox-alignContent
 	);
-
+ 
 	//Resize - Textarea - Content
 	@include resize(
 		$contentTextareaResize-selector, 
@@ -190,14 +190,24 @@ $collectionsFontFamily: $fontFamily;
 		$contentTextareaResize-minWidth, 
 		$contentTextareaResize-minHeight
 	);
+ 
+	$contentColumnWidthOpt: (  
+		columnRule: map-get($contentColumnWidth, columnRule),
+		columnSpan: map-get($contentColumnWidth, columnSpan),
+		columnSpanValue: map-get($contentColumnWidth, columnSpanValue),
+		columnSpanHash: map-get($contentColumnWidth, columnSpanHash),
+		columnRuleWidth: map-get($contentColumnWidth, columnRuleWidth),
+		columnRuleStyle: map-get($contentColumnWidth, columnRuleStyle),
+		columnRuleColor: map-get($contentColumnWidth, columnRuleColor)
+	);
 
 	//Column Width
 	@include column-width(
 		$contentColumnWidth-selector,
 		$contentColumnWidth-hash,
 		$contentColumnWidth-columnCount,
-		$contentColumnWidth-columnGap
+		$contentColumnWidth-columnGap,
+		$contentColumnWidthOpt 
 	);
+ 
 
-
-}

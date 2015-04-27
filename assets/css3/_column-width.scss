@@ -1,8 +1,26 @@
-@mixin column-width($selector, $hash, $columnCount, $columnGap){
-	@if $hash == "id"{
+@mixin column-width($selector, $hash, $columnCount, $columnGap, 
 
+	$options: (
+		columnRule: "false",
+		columnSpan: "false",
+		columnSpanValue: "h1",
+		columnSpanHash: "class", //id, class, tag
+		columnRuleWidth: "1px",
+		columnRuleStyle: "solid",
+		columnRuleColor: "#000"
+	)){
+
+	$optColumnSpan: map-get($options, columnSpan);
+	$optColumnSpanHash: map-get($options, columnSpanHash);
+	
+	$optHash: "";
+
+	@if $hash == "id"{
+ 
 		##{$selector} {
 			position: relative;
+			display: block;
+			
 			-moz-column-gap: #{$columnGap};
 			-webkit-column-gap: #{$columnGap};
 					column-gap: #{$columnGap};
@@ -11,11 +29,51 @@
 			-webkit-column-count: #{$columnCount};
 					column-count: #{$columnCount};
 
-		}
-		
+			@if ($optColumnSpan == true) and ($optColumnSpanHash == "class") {				 				
+				 
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				}
+
+			}
+			
+			@if map-get($options, columnRule) == true {
+
+				-moz-column-rule-style: #{map-get($options, columnRuleStyle)};
+				-webkit-column-rule-style: #{map-get($options, columnRuleStyle)};
+						column-rule-style: #{map-get($options, columnRuleStyle)};
+
+				-moz-column-rule-color: #{map-get($options, columnRuleColor)};
+				-webkit-column-rule-color: #{map-get($options, columnRuleColor)};
+						column-rule-color: #{map-get($options, columnRuleColor)};
+
+				-moz-column-rule-width: #{map-get($options, columnRuleWidth)};
+				-webkit-column-rule-width: #{map-get($options, columnRuleWidth)};
+						column-rule-width: #{map-get($options, columnRuleWidth)};
+			} 
+
+		}	
 	}@elseif $hash == "class"{
 		.#{$selector} {
 			position: relative;
+			display: block;
+			
+
 			-moz-column-gap: #{$columnGap};
 			-webkit-column-gap: #{$columnGap};
 					column-gap: #{$columnGap};
@@ -23,11 +81,100 @@
 			-moz-column-count: #{$columnCount};
 			-webkit-column-count: #{$columnCount};
 					column-count: #{$columnCount};
+
+			@if ($optColumnSpan == true) and ($optColumnSpanHash == "class") {			
+				
+				//@warn $optColumnSpanHash;
+
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				} 
+
+			}@else if ($optColumnSpan == true) and ($optColumnSpanHash == "id") {			
+				
+				//@warn $optColumnSpanHash;
+
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				} 
+
+			}@else if ($optColumnSpan == true) and ($optColumnSpanHash == "tag") {			
+				
+				//@warn $optColumnSpanHash;
+
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				} 
+
+			}
+			
+			@if map-get($options, columnRule) == true {
+
+				-moz-column-rule-style: #{map-get($options, columnRuleStyle)};
+				-webkit-column-rule-style: #{map-get($options, columnRuleStyle)};
+						column-rule-style: #{map-get($options, columnRuleStyle)};
+
+				-moz-column-rule-color: #{map-get($options, columnRuleColor)};
+				-webkit-column-rule-color: #{map-get($options, columnRuleColor)};
+						column-rule-color: #{map-get($options, columnRuleColor)};
+
+				-moz-column-rule-width: #{map-get($options, columnRuleWidth)};
+				-webkit-column-rule-width: #{map-get($options, columnRuleWidth)};
+						column-rule-width: #{map-get($options, columnRuleWidth)};
+			} 
 
 		}
 	}@elseif $hash == "tag"{
 		#{$selector} {
 			position: relative;
+			display: block;
+			
+
 			-moz-column-gap: #{$columnGap};
 			-webkit-column-gap: #{$columnGap};
 					column-gap: #{$columnGap};
@@ -35,6 +182,92 @@
 			-moz-column-count: #{$columnCount};
 			-webkit-column-count: #{$columnCount};
 					column-count: #{$columnCount};
+
+			@if ($optColumnSpan == true) and ($optColumnSpanHash == "class") {			
+				
+				//@warn $optColumnSpanHash;
+
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				} 
+
+			}@else if ($optColumnSpan == true) and ($optColumnSpanHash == "id") {			
+				
+				//@warn $optColumnSpanHash;
+
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				} 
+
+			}@else if ($optColumnSpan == true) and ($optColumnSpanHash == "tag") {			
+				
+				//@warn $optColumnSpanHash;
+
+				@if map-get($options, columnSpanHash) == "class" {
+					
+					$optHash: ".";	
+
+				}@else if map-get($options, columnSpanHash) == "id" {
+					$optHash: "#";	
+				}@if map-get($options, columnSpanHash) == "tag" {
+					$optHash: "";	
+				}
+
+				& #{$optHash}#{map-get($options, columnSpanValue)} {
+					column-span: all; /* W3C */
+					-webkit-column-span: all; /* Safari & Chrome */
+					-moz-column-span: all; /* Firefox */
+					position: relative;
+					display: block;
+					
+				} 
+
+			}
+			
+			@if map-get($options, columnRule) == true {
+
+				-moz-column-rule-style: #{map-get($options, columnRuleStyle)};
+				-webkit-column-rule-style: #{map-get($options, columnRuleStyle)};
+						column-rule-style: #{map-get($options, columnRuleStyle)};
+
+				-moz-column-rule-color: #{map-get($options, columnRuleColor)};
+				-webkit-column-rule-color: #{map-get($options, columnRuleColor)};
+						column-rule-color: #{map-get($options, columnRuleColor)};
+
+				-moz-column-rule-width: #{map-get($options, columnRuleWidth)};
+				-webkit-column-rule-width: #{map-get($options, columnRuleWidth)};
+						column-rule-width: #{map-get($options, columnRuleWidth)};
+			} 
 
 		}
 	}

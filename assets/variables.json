@@ -77,19 +77,26 @@
 	},
 
 	"contentTextareaResize": {
-		"selector": "content",
-		"hash": "class", //Hash: id, class or tag
+		"selector": "aside",
+		"hash": "tag", //Hash: id, class or tag
 		"resize": "both", //none, horizontal, vertical, both
 		"minWidth": "100px",
 		"minHeight": "30px"
 	},
 
 	"contentColumnWidth": {
-		"selector": "column",
+		"selector": "content",
 		"hash": "class", //Hash: id, class or tag
 		//"columnWidth": "200px",
-		"columnGap": "16px",
-		"columnCount": "2"	
+		"columnGap": "40px",
+		"columnCount": "3",
+		"columnRule": "false",
+		"columnSpan": "true",
+		"columnSpanValue": "h1",
+		"columnSpanHash": "tag",
+		"columnRuleWidth": "1px",
+		"columnRuleStyle": "solid",
+		"columnRuleColor": "#000"
 	}
 
 

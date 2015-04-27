@@ -27,16 +27,17 @@
 		}
 	}
 
+	* { zoom: 1 }
+
 	.content {
-		width: 65%;
 		background-color: #f1f1f1;
-		padding: 32px 16px;
-		float: left;
+		padding: 8px 32px;
+		p, h1, h2, h3 {
+			
+		}
 	}
 
 	aside {
-		float: right;
-		width: 30%;
 		background-color: #FAFAFA;
-		padding: 32px 8px;
+		padding: 8px;
 	}
