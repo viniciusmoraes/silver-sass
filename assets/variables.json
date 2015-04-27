@@ -97,6 +97,21 @@
 		"columnRuleWidth": "1px",
 		"columnRuleStyle": "solid",
 		"columnRuleColor": "#000"
+	},
+
+	"menuRgba": {
+		"selector": "menu",
+		"hash": "class",
+		"property": "background",
+		"red": "215",
+		"green": "40",
+		"blue": "40",
+		"rgbaOpacity": "true",
+		"rgbaOpacityValue": "0.5",
+		//"rgbaFallbackIe": "false",
+		"rgbaFallbackIeStart": "50990000",
+		"rgbaFallbackIeEnd": "50990001"
+
 	}
 
 

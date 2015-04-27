@@ -92,6 +92,16 @@ $contentColumnWidth-selector	: map-get($contentColumnWidth, selector);
 $contentColumnWidth-hash		: map-get($contentColumnWidth, hash);
 $contentColumnWidth-columnCount	: map-get($contentColumnWidth, columnCount);
 $contentColumnWidth-columnGap	: map-get($contentColumnWidth, columnGap);
+//Column Width - Options
+$contentColumnWidthOpt: (  
+	columnRule: map-get($contentColumnWidth, columnRule),
+	columnSpan: map-get($contentColumnWidth, columnSpan),
+	columnSpanValue: map-get($contentColumnWidth, columnSpanValue),
+	columnSpanHash: map-get($contentColumnWidth, columnSpanHash),
+	columnRuleWidth: map-get($contentColumnWidth, columnRuleWidth),
+	columnRuleStyle: map-get($contentColumnWidth, columnRuleStyle),
+	columnRuleColor: map-get($contentColumnWidth, columnRuleColor)
+);
 
 //Font Face (Family)
 $collectionsFontFamily: $fontFamily;
@@ -99,9 +109,9 @@ $collectionsFontFamily: $fontFamily;
 @include font-face($collectionsFontFamily, $pathJs);
  
 	#wrapper {
-	width: 100%;
-	overflow: hidden;
-} 
+		width: 100%;
+		overflow: hidden;
+	} 
 
 	@include box-sizing(
 		$contentBoxSizing-selector,
@@ -191,16 +201,6 @@ $collectionsFontFamily: $fontFamily;
 		$contentTextareaResize-minHeight
 	);
  
-	$contentColumnWidthOpt: (  
-		columnRule: map-get($contentColumnWidth, columnRule),
-		columnSpan: map-get($contentColumnWidth, columnSpan),
-		columnSpanValue: map-get($contentColumnWidth, columnSpanValue),
-		columnSpanHash: map-get($contentColumnWidth, columnSpanHash),
-		columnRuleWidth: map-get($contentColumnWidth, columnRuleWidth),
-		columnRuleStyle: map-get($contentColumnWidth, columnRuleStyle),
-		columnRuleColor: map-get($contentColumnWidth, columnRuleColor)
-	);
-
 	//Column Width
 	@include column-width(
 		$contentColumnWidth-selector,
@@ -209,5 +209,33 @@ $collectionsFontFamily: $fontFamily;
 		$contentColumnWidth-columnGap,
 		$contentColumnWidthOpt 
 	);
+
+	$menuRgbaSelector: map-get($menuRgba, selector);
+	$menuRgbaHash: map-get($menuRgba, hash);
+	$menuRgbaProperty: map-get($menuRgba, property);
+	$menuRgbaRed: map-get($menuRgba, red);
+	$menuRgbaGreen: map-get($menuRgba, green);
+	$menuRgbaBlue: map-get($menuRgba, blue);
+ 
+	//RGBA - Options
+	$menuRgbaOpt: (
+		opacity: map-get($menuRgba, rgbaOpacity),
+		opacityValue: map-get($menuRgba, rgbaOpacityValue),
+		rgbaFallbackIe: map-get($menuRgba, rgbaFallbackIe),
+		rgbaFallbackIeStart: map-get($menuRgba, rgbaFallbackIeStart),
+		rgbaFallbackIeEnd: map-get($menuRgba, rgbaFallbackIeEnd)
+	);
+  
+	@include rgba(
+		$menuRgbaSelector,
+		$menuRgbaHash,
+		$menuRgbaProperty,
+		$menuRgbaRed,
+		$menuRgbaGreen,
+		$menuRgbaBlue,
+		$menuRgbaOpt
+	);
+
+
  
 

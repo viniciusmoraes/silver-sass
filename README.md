@@ -20,6 +20,7 @@ Library of Mixins the SASS drinking from a json file for front end.
 7. Resize
 8. Font Face
 9. Column Width
+10.RGBA
 
 ### Mixin - Example
 ```javascript

@@ -1,0 +1,65 @@
+@mixin rgba($selector, $hash, $property, $red, $green, $blue, $options: (
+		rgbaOpacity: "false",
+		rgbaOpacityValue: "0.5",
+		rgbaFallbackIe: "false",
+		rgbaFallbackIeStart: "50990000",
+		rgbaFallbackIeEnd: "50990000"
+
+	)){
+
+	$limit: 256; 
+	
+	$opacity		: map-get($options, rgbaOpacity);
+	$opacityValue	: map-get($options, rgbaOpacityValue);
+	$ie				: map-get($options, rgbaFallbackIe);
+	$ieStart		: map-get($options, rgbaFallbackIeStart);
+	$ieEnd			: map-get($options, rgbaFallbackIeEnd);
+
+	@if $hash == "id"{
+		##{$selector} {
+			
+		} 
+	}@elseif $hash == "class"{
+		.#{$selector} {
+
+			//@warn $selector, $hash, $red, $green, $blue;
+
+			@if $red > $limit or $green > $limit or $blue > $limit {
+				@warn "RGBa Browser Support - You stepped over the line";
+			}@else {
+				 
+				@if $opacity == true {
+
+					@if $property == "background" {
+						background: rgba($red, $green, $blue, $opacityValue);
+					}@elseif $property == "color" {
+						color: rgba($red, $green, $blue, $opacityValue);
+					}
+
+				}@else {
+					@if $property == "background" {
+						background: rgb($red, $green, $blue);
+					}@elseif $property == "color" {
+						color: rgb($red, $green, $blue);
+					}
+					
+				} 
+			}
+
+   			@if $ie == true {
+
+   				@if $property == "background" {
+   					//background:transparent;
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$ieStart},endColorstr=##{$ieEnd}); 
+					zoom: 1;	
+   				}
+				
+   			}
+			
+		}
+	}@else if $hash == "tag"{
+		#{$selector} {
+			
+		}
+	}
+}
